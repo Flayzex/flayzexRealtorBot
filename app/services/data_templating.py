@@ -3,6 +3,8 @@ import re
 
 
 def data_templating(data: str) -> str:
+    if len(data.split("\n")) != 5:
+        return 'Неправильный формат, введите /start для просмотра примера правильного ввода'
     PLACE, OPTIONS, AREA, PRICE, ID = data.split("\n")
 
     match_place = re.match(r"^(.+?,)(.+)$", PLACE)
